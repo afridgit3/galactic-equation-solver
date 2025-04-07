@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,20 +36,32 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Calculator specific colors */
+    --calc-bg: 222 47% 11%;
+    --calc-display: 0 0% 15%;
+    --calc-btn: 215 25% 27%;
+    --calc-btn-hover: 214 28% 35%;
+    --calc-btn-active: 215 25% 22%;
+    --calc-btn-operator: 217 71% 53%;
+    --calc-btn-operator-hover: 217 77% 58%;
+    --calc-btn-operator-active: 217 71% 48%;
+    --calc-btn-equals: 217 91% 60%;
+    --calc-btn-equals-hover: 217 91% 65%;
+    --calc-btn-equals-active: 217 91% 55%;
+    --calc-btn-clear: 0 73% 61%;
+    --calc-btn-clear-hover: 0 73% 66%;
+    --calc-btn-clear-active: 0 73% 56%;
+    --calc-btn-memory: 271 91% 65%;
+    --calc-btn-memory-hover: 271 91% 70%;
+    --calc-btn-memory-active: 271 91% 60%;
   }
 
   .dark {
@@ -97,5 +110,33 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .calc-btn {
+    @apply flex items-center justify-center rounded-md transition-all 
+    duration-150 text-white font-medium text-lg md:text-xl
+    active:scale-95 active:shadow-inner;
+  }
+
+  .calc-btn-number {
+    @apply bg-[hsl(var(--calc-btn))] hover:bg-[hsl(var(--calc-btn-hover))] active:bg-[hsl(var(--calc-btn-active))];
+  }
+
+  .calc-btn-operator {
+    @apply bg-[hsl(var(--calc-btn-operator))] hover:bg-[hsl(var(--calc-btn-operator-hover))] active:bg-[hsl(var(--calc-btn-operator-active))];
+  }
+
+  .calc-btn-equals {
+    @apply bg-[hsl(var(--calc-btn-equals))] hover:bg-[hsl(var(--calc-btn-equals-hover))] active:bg-[hsl(var(--calc-btn-equals-active))];
+  }
+
+  .calc-btn-clear {
+    @apply bg-[hsl(var(--calc-btn-clear))] hover:bg-[hsl(var(--calc-btn-clear-hover))] active:bg-[hsl(var(--calc-btn-clear-active))];
+  }
+
+  .calc-btn-memory {
+    @apply bg-[hsl(var(--calc-btn-memory))] hover:bg-[hsl(var(--calc-btn-memory-hover))] active:bg-[hsl(var(--calc-btn-memory-active))];
   }
 }
